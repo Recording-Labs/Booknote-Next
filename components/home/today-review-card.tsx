@@ -25,20 +25,20 @@ export function TodayReviewCard({ reviewCount }: TodayReviewCardProps) {
             </span>
           )}
         </div>
-        {reviewCount > 0 ? (
-          <>
+          {reviewCount > 0 ? (
+            <>
+              <p className="text-sm text-[#4A4A4A]">
+                오늘 복습할 기억이 {reviewCount}개 있어요
+              </p>
+              <p className="mt-1 text-xs text-[#8C8C8C]">
+                과거의 기록을 다시 돌아보며 기억을 강화해보세요
+              </p>
+            </>
+          ) : (
             <p className="text-sm text-[#4A4A4A]">
-              오늘 복습할 기억이 {reviewCount}개 있어요
+              오늘 복습할 항목이 없습니다
             </p>
-            <p className="mt-1 text-xs text-[#8C8C8C]">
-              과거의 기록을 다시 돌아보며 기억을 강화해보세요
-            </p>
-          </>
-        ) : (
-          <p className="text-sm text-[#4A4A4A]">
-            오늘 복습할 항목이 없습니다
-          </p>
-        )}
+          )}
       </div>
       <ArrowRight className="h-5 w-5 text-[#4E4036] transition-transform group-hover:translate-x-1" />
     </Link>
