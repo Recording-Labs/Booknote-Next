@@ -1,6 +1,6 @@
 'use client';
 
-import { X, Plus, BookOpen } from 'lucide-react';
+import { BookOpen, Plus, X } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -8,7 +8,7 @@ interface Book {
   id: number;
   title: string;
   author: string;
-  coverImage?: string;
+  coverImage?: string | null;
   progress?: number;
 }
 
@@ -24,7 +24,6 @@ export function BookSelectionModal({
   isOpen, 
   onClose, 
   books, 
-  onAddBook,
   recordType = 'note'
 }: BookSelectionModalProps) {
   const router = useRouter();

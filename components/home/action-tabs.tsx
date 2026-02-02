@@ -1,9 +1,9 @@
 'use client';
 
+import { UserBookResponse } from '@/lib/types/book/book';
 import { FileText, Quote } from 'lucide-react';
 import { useState } from 'react';
 import { BookSelectionModal } from './book-selection-modal';
-import { UserBookResponse } from '@/lib/types/book/book';
 
 type RecordType = 'quote' | 'note';
 
