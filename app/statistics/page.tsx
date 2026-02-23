@@ -1,7 +1,14 @@
 import { authOptions } from '@/lib/auth';
 import { StatisticsResponse } from '@/lib/types/statistics/statistics';
+import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
 import StatisticsClient from './StatisticsClient';
+
+export const metadata: Metadata = {
+  title: '통계',
+  description: '독서량, 목표 달성률 등 나의 독서 통계를 확인하는 페이지입니다.',
+  robots: { index: false, follow: true },
+};
 
 async function getStatisticsData(): Promise<StatisticsResponse> {
   const session = await getServerSession(authOptions);

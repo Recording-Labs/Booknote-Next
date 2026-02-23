@@ -5,7 +5,14 @@ import { TodayReviewCard } from '@/components/home/today-review-card';
 import { authOptions } from '@/lib/auth';
 import { UserBookResponsePage } from '@/lib/types/book/book';
 import { ActivityResponse } from '@/lib/types/dashboard/dashboard';
+import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
+
+export const metadata: Metadata = {
+  title: '홈',
+  description:
+    '오늘의 복습, 북클럽 트렌드, 최근 활동을 한눈에 보는 Booknote 홈입니다.',
+};
 
 async function getTodayReviewCount(): Promise<number> {
   try {

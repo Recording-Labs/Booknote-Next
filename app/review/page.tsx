@@ -1,8 +1,15 @@
 import { authOptions } from "@/lib/auth"
 import { Review, ReviewItem, ReviewTodayResponse, UIReviewItem } from "@/lib/types/review/review"
 import { getLastReviewDate, getLastReviewText } from "@/lib/utils/review-date"
+import type { Metadata } from "next"
 import { getServerSession } from "next-auth"
 import ReviewClient from "./ReviewClient"
+
+export const metadata: Metadata = {
+  title: "리마인드",
+  description: "저장한 노트와 인용구를 복습하며 기억을 강화하는 리마인드 페이지입니다.",
+  robots: { index: false, follow: true },
+}
 
 async function getTodayReviews(): Promise<{
   review: Review

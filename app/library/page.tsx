@@ -1,13 +1,16 @@
-// import { LibraryHeader } from '@/components/library/library-header';
-// import { LibrarySearch } from '@/components/library/library-search';
-// import { LibraryTabs } from '@/components/library/library-tabs';
-// import { LibraryFolders } from '@/components/library/library-folders';
-// import { LibraryBooksGrid } from '@/components/library/library-books-grid';
 import { authOptions } from '@/lib/auth';
 import { UserBookResponsePage } from '@/lib/types/book/book';
+import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import { LibraryClient } from './LibraryClient';
+
+export const metadata: Metadata = {
+  title: '내 서재',
+  description:
+    '등록한 책을 폴더와 검색으로 관리하는 내 서재 페이지입니다.',
+  robots: { index: false, follow: true },
+};
 
 async function getBooksData(): Promise<UserBookResponsePage | null> {
   try {

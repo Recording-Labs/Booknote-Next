@@ -151,23 +151,6 @@ export function Header() {
                   {menuItems.map((item) => {
                     const Icon = item.icon
                     const isActive = item.isActive || false
-
-                      // if (item.onClick) {
-                      //   return (
-                      //     <button
-                      //       key={item.label}
-                      //       onClick={() => {
-                      //         item.onClick?.()
-                      //         setIsMobileMenuOpen(false)
-                      //       }}
-                      //       className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-all duration-200 group"
-                      //     >
-                      //       <Icon className="h-5 w-5 transition-transform group-hover:scale-110" />
-                      //       <span>{item.label}</span>
-                      //     </button>
-                      //   )
-                      // }
-
                     return (
                       <a
                         key={item.href}
