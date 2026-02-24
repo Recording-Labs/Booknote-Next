@@ -53,27 +53,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name: "Booknote",
-    description:
-      "독서를 기록하고, 인용구와 노트로 기억을 남기는 개인 독서 관리 서비스입니다.",
-    applicationCategory: "LifestyleApplication",
-    operatingSystem: "Web",
-    url: baseUrl,
-  };
-
   return (
     <html lang="ko">
       <head />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
         <SessionProviderWrapper>
           <Header />
           {children}
