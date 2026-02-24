@@ -36,6 +36,10 @@ export default withAuth(
       authorized: ({ token, req }) => {
         const { pathname } = req.nextUrl
         
+        if (pathname === '/sitemap.xml' || pathname === '/robots.txt') {
+          return true
+        }
+        
         // API 경로는 통과
         if (pathname.startsWith('/api/')) {
           return true
